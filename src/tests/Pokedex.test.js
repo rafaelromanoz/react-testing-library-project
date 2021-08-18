@@ -36,22 +36,6 @@ describe('Testando o componente Pokedex.js', () => {
     const pikachu = screen.getByText('Pikachu');
     expect(pikachu).toBeInTheDocument();
   });
-  it('Teste se a pokédex tem os botões de filtro', () => {
-    renderWithRouter(<App />);
-
-    const pokemonName = screen.getByText('Pikachu');
-    expect(pokemonName).toBeInTheDocument();
-    expect(pokemonName).toHaveTextContent('Pikachu');
-
-    const nextPokemon = screen.getByRole('button', {
-      name: 'Próximo pokémon',
-    });
-
-    expect(nextPokemon).toBeInTheDocument();
-    userEvent.click(nextPokemon);
-    expect(pokemonName).toBeInTheDocument();
-    expect(pokemonName).toHaveTextContent('Charmander');
-  });
   it('Teste se tem o botão de tipo', () => {
     renderWithRouter(<App />);
     const typeButton = screen.getByRole('button', {
